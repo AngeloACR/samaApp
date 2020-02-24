@@ -1,0 +1,131 @@
+<!-- <nav id="cisNav" class="navBox">
+	<ul class="navList">
+		<a *ngIf="isAdmin || isEmpleado" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/dir/0']">
+			<li id="0" class="navElement opt" [ngClass]="aMenu0" (click)="tMenu('0')">
+				Directorio
+			</li>
+		</a>
+		<div class="lBox" [ngClass]="aBox0">
+			<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/dir/0']">
+				<li class="navChild">
+					Proveedores
+				</li>
+			</a>
+			<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/dir/1']">
+				<li class="navChild">
+					Clientes
+				</li>
+			</a>
+			<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/dir/2']">
+				<li class="navChild">
+					Empleados
+				</li>
+			</a>
+			<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/dir/3']">
+				<li class="navChild">
+					Miscelaneo
+				</li>
+			</a>
+			<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/dir/4']">
+				<li class="navChild">
+					Administradores
+				</li>
+			</a>
+		</div>
+		<a *ngIf="isAdmin || isEmpleado" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/gen/0']">
+			<li id="1" class="navElement opt" [ngClass]="aMenu1" (click)="tMenu('1')">
+				Generador
+			</li>
+		</a>
+		<div class="lBox" [ngClass]="aBox1">
+			<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/gen/0']">
+				<li class="navChild">
+					Pago de Proveedores
+				</li>
+			</a>
+			<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/gen/1']">
+				<li class="navChild">
+					Pago de Nomina
+				</li>
+			</a>
+		</div>
+		<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/perfil']">
+			<li id="2" class="navElement opt" [ngClass]="aMenu2" (click)="tMenu('2')">
+				Perfil
+			</li>
+		</a>
+		<div class="lBox" [ngClass]="aBox2">
+			<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/perfil']">
+				<li class="navChild">
+					Ver todo
+				</li>
+			</a>
+		</div>
+		<a *ngIf="isAdmin || isProveedor" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/fin/0']">
+			<li id="3" class="navElement opt" [ngClass]="aMenu3" (click)="tMenu('3')">
+				Informacion financiera
+			</li>
+		</a>
+		<div class="lBox" [ngClass]="aBox3">
+			<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/fin/0']">
+				<li class="navChild">
+					Retenciones
+				</li>
+			</a>
+			<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/fin/1']">
+				<li class="navChild">
+					Comprobantes de pago
+				</li>
+			</a>
+			<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/fin/2']">
+				<li class="navChild">
+					Cuentas por pagar
+				</li>
+			</a>
+		</div>
+
+		<a *ngIf="isAdmin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/adm',0]">
+			<li id="4" class="navElement opt" [ngClass]="aMenu4" (click)="tMenu('4')">
+				Administracion
+			</li>
+		</a>
+		<div class="lBox" [ngClass]="aBox4">
+			<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/adm',0]">
+				<li class="navChild">
+					Administrar usuarios
+				</li>
+			</a>
+			<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/adm',1]">
+				<li class="navChild">
+					Administrar empresas
+				</li>
+			</a>
+			<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/adm',2]">
+				<li class="navChild">
+					Administrar permisos
+				</li>
+			</a>
+			<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="['/adm',3]">
+				<li class="navChild">
+					Administrar generador
+				</li>
+			</a>
+		</div>
+	</ul>
+	<div class="sideFoot">
+ 		<img src="/assets/relleno1.jpg" class="sImg" alt="">
+	</div>
+</nav> -->
+
+<nav id="cisNav" class="navBox">
+	<ul class="navList">
+		<div class="listBox" *ngFor="let item of myMenu;">
+			<li [id]="item.id" class="navElement opt" [ngClass]="item.class" (click)="tMenu(item.id)">
+				<a [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [routerLink]="item.link">
+
+					<fa-icon [icon]="item.icon" class="menuIcon"></fa-icon>{{item.name}}
+				</a>
+			</li>
+		</div>
+	</ul>
+</nav>

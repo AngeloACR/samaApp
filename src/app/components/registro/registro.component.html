@@ -1,0 +1,44 @@
+<div class="pageBox">
+    <div class="logBox">
+      <div class="formHeader">
+        Registro
+      </div>
+      <div class="logoBox">
+        <img class="formImg" src="assets/logoAzul.png" alt="Logo">
+      </div>
+      <div class="formBox">
+        <form [formGroup]="registro" (ngSubmit)="registerUser()">
+          <div class="formContent">
+            <div class="formInput">
+              <input class="lInput" type="text" formControlName="name" name="name" placeHolder="Nombre">
+            </div>
+            <div class="formInput">
+              <input class="lInput" type="text" formControlName="username" name="username"
+                placeHolder="Nombre de usuario">
+            </div>
+            <div class="formInput">
+              <input class="lInput" type="text" formControlName="mail" name="mail" placeHolder="Correo">
+            </div>
+  
+            <div class="formInput">
+              <input class="lInput" type="password" formControlName="password" name="password" placeHolder="Contraseña">
+            </div>
+            <div class="formInput">
+              <input class="lInput" type="password" formControlName="cpassword" name="cpassword"
+                placeHolder="Confirmar contraseña">
+            </div>
+  
+             <div class="buttonBox">
+  
+              <button style="margin-right: 10px;" type="submit" class="formButton">
+                <p>Registrarse</p>
+              </button>
+  <!--             <button type="button" class="formButton" (click)="login()">
+                <p>Iniciar sesión</p>
+              </button> -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

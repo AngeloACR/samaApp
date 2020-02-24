@@ -1,0 +1,59 @@
+<div class="modBox">
+  <div class="titleBox">
+    <p *ngFor="let item of menu; let i = index" (click)="toggleMenu($event, item, i)" class="titleMenu"
+      [ngClass]="item.class">{{item.name}}</p>
+  </div>
+
+  <table class="showBox">
+    <tr class="listBox">
+      <th class="listButton"></th>
+      <th class="listTitle">Cod Entidad</th>
+      <th class="listTitle">Entidad Emisora</th>
+      <th class="listTitle">Rif Emisor</th>
+      <th class="listTitle">Tipo de pago</th>
+      <th class="listTitle">Numero de Lote</th>
+    </tr>
+    <tr class="listBox">
+    </tr>
+    <tr class="listBox">
+      <th class="listTitle">Cod Banco</th>
+      <th class="listTitle">Cuenta a debitar</th>
+      <th class="listTitle">Fecha de pago</th>
+      <th class="listTitle">Monto Total</th>
+      <th class="listTitle">Cantidad de registros</th>
+    </tr>
+    <tr class="listBox">
+    </tr>
+
+  </table>
+
+	<form class="showBox" [formGroup]="myForm" (ngSubmit)="confirmAdd()">  
+      <table style="width: 100%;" formArrayName="myInputs">
+    <tr class="listBox">
+      <th class="listButton"></th>
+      <!-- <th class="listTitle">#</th> -->
+      <th class="listTitle" *ngFor="let field of fields">{{field}}</th>
+      <!-- <th class="listTitle">Rif</th>
+      <th class="listTitle">Nombre</th>
+      <th class="listTitle">Cod Banco</th>
+      <th class="listTitle">Monto</th>
+      <th class="listTitle">Concepto de pago</th>
+      <th class="listTitle">Email</th>
+      <th class="listTitle">Referencia</th> -->
+    </tr>
+    <tr class="formItem" [ngClass]="showRow" *ngFor="let form of forms; let j=index">
+				<td class="listButton">
+					<button type="submit" id="submitB">Add</button>
+				</td>
+				<td class="listTitle" *ngFor="let input of myInputs.controls | slice:7*j:7*j+6; let i=index">
+					<input class="lInput" type="text" [formControlName]="7*j+i" [placeholder]="fields[i]">
+				</td>
+			</tr>
+
+  </table>
+
+</form>
+  <button class="buttonBox" (click)="openForm()">
+    {{addText}}
+  </button>
+</div>
